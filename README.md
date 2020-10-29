@@ -1,5 +1,5 @@
 # RIL-19-TP-Cloud
-Code Golang pour TP déplouement Cloud
+Code Golang pour TP déplouement Cloud - Dorian Loison & Nicoals Kamphaus
 
 ## 1.Jusification du CI/CD?
 
@@ -7,7 +7,7 @@ Code Golang pour TP déplouement Cloud
 
 ## 3.Dispo Europe/Asie?
 
-## 4.Solution mongoDB simple, peut cher et flexible?
+## 4.Solution mongoDB simple, peu cher et flexible?
 
 ## 5.Limitations application et infrastructure cible?
 
