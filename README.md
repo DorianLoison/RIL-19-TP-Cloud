@@ -64,13 +64,17 @@ La solution MongoDb retenue dispose d'une accessibilité mondiale.
 ## 4.Solution mongoDB simple, peu cher et flexible?
 MongoDb Atlas a été retenue.
 
-Simplicité de connexion cloud + diffusion data a traver le monde grace a plus de 50 cluster dans le monde.
+Simplicité de connexion cloud + diffusion data facilitée grace a plus de 50 cluster dans le monde.
 
-De base, elle dispose d'un offre free tier pour nos besoin.
+De base, elle dispose d'un offre free tier pour nos besoins.
 
 Autrement, on paye à l'utilisation, ce qui fait que ça revient à moins cher en faible activité.
 
 ## 5.Limitations application et infrastructure cible?
-Infra pratiquement gratuite avec faibles resources
+Infra pratiquement gratuite avec faibles resources.
+
+MongoDb Atlas => Offre en cluster partagé avec d'autres utilisateurs, faible capacité de stockage
+
+AWS => Offre d'entrée aux faibles capacités, ne peut pas supporter une grande charge
 
 ## 6.Votre local (PC) est un cloud privé (?)
