@@ -64,31 +64,40 @@ func CreateTodo(c *gin.Context) {
 	completed := todo.Completed
 	id := guuid.New().String()
 
-	newTodo := Todo{
-		ID: id,
-		Title:     title,
-		Body:      body,
-		Completed: completed,
-		CreatedAt: time.Now(),
-		UpdatedAt: time.Now(),
-	}
-
-	_, err := collection.InsertOne(context.TODO(), newTodo)
-
-	if err != nil {
-		log.Printf("Error while inserting new todo into db, Reason: %v\n", err)
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"status":  http.StatusInternalServerError,
-			"message": "Something went wrong",
+	if len(title) > 0 && len(body) > 0  && len(completed) > 0 {
+		newTodo := Todo{
+			ID: id,
+			Title:     title,
+			Body:      body,
+			Completed: completed,
+			CreatedAt: time.Now(),
+			UpdatedAt: time.Now(),
+		}
+	
+		_, err := collection.InsertOne(context.TODO(), newTodo)
+	
+		if err != nil {
+			log.Printf("Error while inserting new todo into db, Reason: %v\n", err)
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"status":  http.StatusInternalServerError,
+				"message": "Something went wrong",
+			})
+			return
+		}
+	
+		c.JSON(http.StatusCreated, gin.H{
+			"status":  http.StatusCreated,
+			"message": "Todo created Successfully",
+		})
+		return
+	} else{
+		c.JSON(http.StatusCreated, gin.H{
+			"status":  http.StatusOK,
+			"message": "Route Found",
 		})
 		return
 	}
-
-	c.JSON(http.StatusCreated, gin.H{
-		"status":  http.StatusCreated,
-		"message": "Todo created Successfully",
-	})
-	return
+	
 }
 
 func GetSingleTodo(c *gin.Context) {
@@ -144,7 +153,7 @@ func EditTodo(c *gin.Context) {
 }
 
 func DeleteTodo(c *gin.Context) {
-todoId := c.Param("todoId")
+	todoId := c.Param("todoId")
 
 	_, err := collection.DeleteOne(context.TODO(), bson.M{"id": todoId})
 	if err != nil {
