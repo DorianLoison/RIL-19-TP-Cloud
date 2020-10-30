@@ -9,7 +9,7 @@ Réussite
 Réussite
 ## 3.Rédaction des tests unitaires : https://golang.org/pkg/testing/
 Fait
-Insiprés par :
+Inspirés par :
 * https://gist.github.com/asm-jaime/0bd3c294f4cb4f7a7775af6749de4b28
 * https://github.com/moemoe89/go-mongodb-gita/blob/master/api/delivery/http/handler_test.go
 ## 4.Test unitaire pour les routes POST/GET/PUT/DELETE
